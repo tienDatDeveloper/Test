@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src = "face-api.min.js " defer ></script>
+       <script src = "main.js" defer></script>
+<title>Flask Python</title>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-2">
+                    
+            </div>  
+            <div class="col-8">
+                <div>
+                    <p style="margin: bot 100px;">    </p>
+                    <label for="" style = "margin-top:50px">Speaking here </label>
+                    <button style = "margin-left:635px" id="speak"><i class="fa fa-microphone"></i></button>
+                    <textarea  class = "textarea" name="" id="" cols="100" rows="10"></textarea>
+                    <p id="textarea"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+        
+            </div>
+            <div class="col-8">
+                
+            </div>
+        </div>
+    </div> -->
+    <video src=""  autoplay="true" id = "videoElm"></video>
+
+</body>
+<script>
+            /* script speechRecognition
+    /*---------------------------------------------------------*/
+    var speak = document.getElementById('speak');
+    var textarea = document.querySelector('.textarea');
+    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
+    speak.addEventListener('click', function () {
+        recognition.start();
+        textarea.value = '...speaking';
+    })
+    recognition.onresult = function (e) {
+        var transcript = e.results[0][0].transcript;
+        textarea.value = transcript;
+
+
+    } 
+
+ //            /* face-api
+//    /* ---------------------------------------------------------*/
+// const video = document.getElementById('videoElm')
+
+//     const loadFaceAPI = async () => {
+//         await faceapi.nets.faceLandmark68Net.loadFromUri('./models');
+//         await faceapi.nets.faceRecognitionNet.loadFromUri('./models');
+//         await faceapi.nets.tinyFaceDetector.loadFromUri('./models');
+//         await faceapi.nets.faceExpressionNet.loadFromUri('./models');
+//     }
+
+//     function getCameraStream (){
+//        if(navigator.mediaDevices.getUserMedia){
+//            navigator.mediaDevices.getUserMedia({ video: {} })
+//                .then(stream =>{
+//                    video.srcObject = stream;
+//                });
+//        }
+//     }
+//    video.addEventListener('playing', ()=>{
+//     const canvas = faceapi.createCanvasFromMedia(video);
+//     document.body.append(canvas);
+//     const displaySize = {
+//         width: video.videoWidth,
+//         height: video.videoHeight  
+//     }
+//     setInterval( async () => {
+//        const detects = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+//         .withFaceLandmarks()
+//         .withFaceExpressions();
+
+
+//     const resizedDetects = faceapi.resizeResults(detects,displaySize);
+//     canvas.getContext('2d').clearRect(0, 0, displaySize.width, displaySize.height);
+//     faceapi.draw.drawDetections(canvas,resizedDetects);
+//     faceapi.draw.drawFaceLandmark(canvas,resizedDetects);
+//     faceapi.draw.drawFaceExpressions(canvas,resizedDetects);
+//     },300);
+//    });
+//    loadFaceAPI().then(getCameraStream);
+    /*----------------------------------------------------------*/
+</script>
+
+</body>
+</html>
